@@ -4,7 +4,7 @@ letter = {}
 #value of the letter
 number = 0
 # get letters from ASCII, put them and assign value in letter{}
-for i in range(65,91):
+for i in range(ord('A'),ord('Z')):
     letter[chr(i)] = number
     number += 1
 
