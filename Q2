@@ -1,10 +1,9 @@
-
 letter = {}
 
-#value of the letter
+# value of the letter
 number = 0
 # get letters from ASCII, put them and assign value in letter{}
-for i in range(ord('A'),ord('Z')):
+for i in range(ord('A'), ord('Z')):
     letter[chr(i)] = number
     number += 1
 
@@ -12,30 +11,29 @@ for i in range(ord('A'),ord('Z')):
 name = input('Name? ').upper()
 kt = input('Keytext? ').upper()
 
-plainText = list(name)
-keyText = list(kt)
+plaintext = list(name)
+keytext = list(kt)
 
 
 # created n for running the list from index0
 n = 0
 
-for i in plainText:
-    cipherValue = (letter[keyText[n]] + letter[plainText[n]])
-    #get the cipher letters from value
-    if cipherValue <= 25:
+for i in plaintext:
+    cipher_value = (letter[keytext[n]] + letter[plaintext[n]])
+# get the cipher letters from value
+    if cipher_value <= 25:
         for k, v in letter.items():
-            if v == cipherValue:
+            if v == cipher_value:
                 key = k
-                print(i, letter[keyText[n]], key)
+                print(i, letter[keytext[n]], key)
         n += 1
 
-    elif cipherValue > 25:
-        while cipherValue > 25:
-            cipherValue -= 25
-        if cipherValue <= 25:   
+    elif cipher_value > 25:
+        while cipher_value > 25:
+            cipher_value -= 25
+        if cipher_value <= 25:   
             for k, v in letter.items():
-                if v == cipherValue - 1 :
-                   key = k
-                   print(i, letter[keyText[n]], key)
+                if v == cipher_value - 1:
+                    key = k
+                    print(i, letter[keytext[n]], key)
         n += 1
-
